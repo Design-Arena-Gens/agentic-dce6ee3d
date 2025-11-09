@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Services Catalog</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="py-5 bg-gradient">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <p class="text-uppercase text-primary fw-semibold tracking-wide mb-2">
+              Our Services
+            </p>
+            <h1 class="display-5 fw-bold text-white">
+              Discover tailored solutions crafted for modern businesses
+            </h1>
+            <p class="lead text-white-50 mt-3">
+              Browse our curated catalog to find specialized expertise for any phase
+              of your digital transformation journey.
+            </p>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0">
+            <div class="search-card shadow-lg">
+              <label for="service-search" class="form-label fw-semibold text-muted">
+                Search services
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-search text-muted"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m11.742 10.344 3.387 3.387a1 1 0 0 1-1.414 1.414l-3.387-3.387a6 6 0 1 1 1.414-1.414zm-5.742.656a4.5 4.5 0 1 0-4.5-4.5 4.5 4.5 0 0 0 4.5 4.5"
+                    />
+                  </svg>
+                </span>
+                <input
+                  type="search"
+                  class="form-control border-start-0 shadow-none"
+                  id="service-search"
+                  placeholder="Try “cloud migration” or “UX design”"
+                  autocomplete="off"
+                />
+              </div>
+              <p class="aux-text mb-0 mt-3 text-muted">
+                Filter instantly by service name, category, or capability keywords.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+          <h2 class="h3 fw-semibold text-dark mb-0">Featured Services</h2>
+          <span
+            id="service-count"
+            class="badge bg-primary-subtle text-primary-emphasis"
+          ></span>
+        </div>
+        <div id="services-grid" class="row g-4"></div>
+        <div id="empty-state" class="empty-state text-center py-5 d-none">
+          <div class="icon-wrapper mx-auto mb-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="34"
+              height="34"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="text-primary"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </div>
+          <h3 class="h5 fw-semibold text-dark">No services found</h3>
+          <p class="text-muted">
+            Try another search term or explore broader keywords to see our full range of offerings.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div id="service-modal" class="service-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="service-modal__backdrop"></div>
+      <div class="service-modal__dialog">
+        <button type="button" class="service-modal__close" aria-label="Close service details">
+          &times;
+        </button>
+        <div class="service-modal__content">
+          <span id="modal-category" class="badge bg-primary-subtle text-primary-emphasis mb-3"></span>
+          <h3 id="modal-title" class="h4 fw-semibold text-dark mb-2"></h3>
+          <p id="modal-summary" class="text-muted mb-4"></p>
+          <div>
+            <h4 class="h6 text-uppercase text-muted fw-semibold">Key deliverables</h4>
+            <ul id="modal-deliverables" class="list-unstyled mt-3 mb-4"></ul>
+          </div>
+          <div>
+            <h4 class="h6 text-uppercase text-muted fw-semibold">Engagement highlights</h4>
+            <ul id="modal-highlights" class="list-unstyled mt-3"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
